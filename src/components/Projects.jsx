@@ -67,25 +67,32 @@ export function Projects({ username, descriptionOverrides = {} }) {
     if (!username) return
     setStatus('loading')
     fetchGithubRepos(username, { limit: 24 })
-      .then(async (data) => {
-        if (!mounted) return
-        const enriched = await Promise.all(
-          data.map(async (r) => {
-            const override =
-              descriptionOverrides?.[r.name] ||
-              descriptionOverrides?.[normalizeKey(r.name)] ||
-              descriptionOverrides?.[normalizeKey(r.name).replace(/-/g, ' ')]
-            if (override) return { ...r, smartDescription: override }
+  .then(async (data) => {
+    if (!mounted) return
 
-            const readme = await fetchRepoReadmeText(username, r.name)
-            return { ...r, smartDescription: generateRepoDescription(r, readme) }
-          }),
-        )
+    const hiddenRepos = ['portfolio', 'sakshi-portfolio']
 
-        if (!mounted) return
-        setRepos(enriched)
-        setStatus('ready')
-      })
+    const filtered = data.filter(
+      (r) => !hiddenRepos.includes(r.name.toLowerCase())
+    )
+
+    const enriched = await Promise.all(
+      filtered.map(async (r) => {
+        const override =
+          descriptionOverrides?.[r.name] ||
+          descriptionOverrides?.[normalizeKey(r.name)] ||
+          descriptionOverrides?.[normalizeKey(r.name).replace(/-/g, ' ')]
+        if (override) return { ...r, smartDescription: override }
+
+        const readme = await fetchRepoReadmeText(username, r.name)
+        return { ...r, smartDescription: generateRepoDescription(r, readme) }
+      }),
+    )
+
+    if (!mounted) return
+    setRepos(enriched)
+    setStatus('ready')
+  })
       .catch(() => {
         if (!mounted) return
         setStatus('error')

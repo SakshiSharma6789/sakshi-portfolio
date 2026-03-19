@@ -138,9 +138,9 @@ export function Hero({ profile }) {
                 ))}
               </div>
 
-              <p className="mt-6 text-xs text-zinc-400">
+              {/* <p className="mt-6 text-xs text-zinc-400">
                 Tip: add your resume PDF at <code className="rounded bg-white/5 px-1 py-0.5">public/sakshi-resume.pdf</code>
-              </p>
+              </p> */}
             </div>
           </motion.div>
         </div>

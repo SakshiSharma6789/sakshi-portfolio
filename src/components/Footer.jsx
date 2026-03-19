@@ -4,7 +4,7 @@ export function Footer({ profile }) {
       <div className="container-app">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <p className="text-sm text-zinc-400">
-            © {new Date().getFullYear()} {profile.name}. Built with React + Vite + Tailwind.
+            © {new Date().getFullYear()} {profile.name}.
           </p>
 
           <div className="flex flex-wrap items-center gap-2">

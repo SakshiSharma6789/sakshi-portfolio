@@ -68,60 +68,7 @@ export default function App() {
           </div>
         </Section>
 
-        <Section id="experience" eyebrow="Experience" title="What I’ve built">
-          <div className="grid gap-4">
-            {profile.experience?.map((item) => (
-              <div key={`${item.company}-${item.role}`} className="glass rounded-3xl p-6">
-                <div className="flex flex-wrap items-start justify-between gap-4">
-                  <div className="min-w-0">
-                    <h3 className="text-lg font-semibold text-zinc-50">
-                      {item.role}{' '}
-                      <span className="text-zinc-400">
-                        · {item.company}
-                      </span>
-                    </h3>
-                    <p className="mt-1 text-sm text-zinc-400">
-                      {item.period}
-                      {item.location ? ` · ${item.location}` : ''}
-                    </p>
-                  </div>
-                  {item.tagline ? (
-                    <div className="rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-zinc-200">
-                      {item.tagline}
-                    </div>
-                  ) : null}
-                </div>
-
-                {item.summary ? (
-                  <p className="mt-4 text-pretty text-sm text-zinc-200/90">{item.summary}</p>
-                ) : null}
-
-                {Array.isArray(item.impact) && item.impact.length ? (
-                  <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-200/90">
-                    {item.impact.map((p) => (
-                      <li key={p}>{p}</li>
-                    ))}
-                  </ul>
-                ) : null}
-
-                {Array.isArray(item.tech) && item.tech.length ? (
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {item.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-zinc-100"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                ) : null}
-              </div>
-            ))}
-          </div>
-        </Section>
-
-        <Section id="projects" eyebrow="Projects" title="GitHub projects (no live demo needed)">
+        <Section id="projects" eyebrow="Projects" title="GitHub projects">
           <Projects
             username={profile.links.githubUsername}
             descriptionOverrides={profile.projects?.descriptionOverrides}

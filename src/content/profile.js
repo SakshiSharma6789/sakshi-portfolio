@@ -22,23 +22,6 @@ export const profile = {
     'JWT/Auth',
     'Git/GitHub',
   ],
-  experience: [
-    {
-      role: 'Full Stack Developer (Project)',
-      company: 'AI Code Reviewer',
-      period: '2026',
-      location: 'Remote',
-      tagline:
-        'An AI-powered code reviewer that analyzes code and provides smart suggestions to improve quality, readability, and performance.',
-      summary:
-        'A smart web-based application that analyzes source code and provides intelligent feedback using AI. It leverages the Google Gemini API to understand code structure, detect issues, and suggest improvements in real-time.',
-      impact: [
-        'Improves code quality by detecting errors, bad practices, and potential vulnerabilities.',
-        'Acts like a virtual mentor by explaining issues in simple terms and recommending better approaches.',
-      ],
-      tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Google Gemini API'],
-    },
-  ],
   projects: {
     /**
      * Optional: override descriptions for specific repos.

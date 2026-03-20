@@ -12,15 +12,38 @@ export const profile = {
     resume: '/sakshi-resume.pdf',
   },
   skills: [
-    'React',
-    'Node.js',
-    'Express',
-    'MongoDB',
-    'Java',
-    'Spring Boot',
-    'REST APIs',
-    'JWT/Auth',
-    'Git/GitHub',
+    
+  // Frontend
+  'React',
+  'JavaScript (ES6+)',
+  'HTML',
+  'CSS',
+  'Tailwind CSS',
+
+  // Backend
+  'Node.js',
+  'Express.js',
+  'Java',
+  'Spring Boot',
+  'REST APIs',
+  'JWT Authentication',
+  'Role-Based Access Control',
+
+  // Database
+  'MongoDB',
+  'MySQL',
+
+  // Tools
+  'Git',
+  'GitHub',
+  'Postman',
+  'VS Code',
+
+  // Concepts
+  'API Design',
+  'Authentication & Authorization',
+  'MVC Architecture',
+
   ],
   projects: {
     /**

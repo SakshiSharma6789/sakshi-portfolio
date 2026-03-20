@@ -10,7 +10,7 @@ function normalizeKey(s) {
     .trim()
 }
 
-function formatUpdated(dateIso) {
+function formatUpdated(dateIso) { 
   if (!dateIso) return null
   const dt = new Date(dateIso)
   return dt.toLocaleDateString(undefined, { year: 'numeric', month: 'short' })

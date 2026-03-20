@@ -13,7 +13,7 @@ export function Section({ id, eyebrow, title, children }) {
               {title}
             </h2>
           </div>
-        </div>
+        </div> 
         {children}
       </div>
     </section>

@@ -41,7 +41,6 @@ export async function fetchGithubRepos(username, { limit = 8 } = {}) {
   const hiddenRepos = [
     "Golf - charity - subscription - platform",
     "Login2xploreShipmentForm",
-    "Task-Manager-",
   ];
   const filtered = repos
     .filter((r) => !r.fork && !r.archived && !hiddenRepos.includes(r.name))
